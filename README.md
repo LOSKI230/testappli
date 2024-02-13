@@ -6,7 +6,7 @@ Himmid Brahim
 Lo Mouhamadou  
 Fahmaoui Nada
 
-Ce fichier détaille les commandes symfony réaliséés pour chaque question.
+Ce fichier détaille les commandes symfony réalisées pour chaque question.
 
 ### question1 :
 
@@ -38,3 +38,10 @@ Ce fichier détaille les commandes symfony réaliséés pour chaque question.
 ### question4
 ```
 • symfony console make:crud Lecon
+```
+
+### question5:
+```
+• ajout de la barre de navigation avec la balise nav de bootstrap
+• des ajustements ont été effectués, incluant l'ajout des boutons Supprimer, Afficher, Modifier, Retour, ainsi que quelques autres paramètres pour embellir l'application
+```

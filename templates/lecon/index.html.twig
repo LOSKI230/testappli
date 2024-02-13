@@ -2,10 +2,10 @@
 
 {% block title %}Lecon index{% endblock %}
 
-{% block body %}
-    <h1>Leçon index</h1>
+{% block body  %}
 
-    <table class="table">
+
+    <table class="table w-100">
         <thead>
             <tr>
                 <th>Id</th>
@@ -20,10 +20,16 @@
                 <td>{{ lecon.id }}</td>
                 <td>{{ lecon.nom }}</td>
                 <td>{{ lecon.description }}</td>
-                <td>
-                    <a href="{{ path('app_lecon_show', {'id': lecon.id}) }}">show</a>
-                    <a href="{{ path('app_lecon_edit', {'id': lecon.id}) }}">edit</a>
+
+                <td >
+                    <div class="d-flex justify-content-between">
+                    <a class="btn btn-outline-primary  mx-1" href="{{ path('app_lecon_show', {'id': lecon.id}) }}">Consulter</a>
+                    <a class="btn btn-outline-secondary mx-1" href="{{ path('app_lecon_edit', {'id': lecon.id}) }}">Modifier</a>
+                        {{ include('lecon/_delete_form.html.twig') }}
+                    </div>
                 </td>
+
+
             </tr>
         {% else %}
             <tr>
@@ -32,6 +38,4 @@
         {% endfor %}
         </tbody>
     </table>
-
-    <a href="{{ path('app_lecon_new') }}">Create new</a>
 {% endblock %}
