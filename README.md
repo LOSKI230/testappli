@@ -35,3 +35,6 @@ Ce fichier détaille les commandes symfony réaliséés pour chaque question.
 • symfony console make:fixture
 • symfony console doctrine:fixtures:load
 ```
+### question4
+```
+• symfony console make:crud Lecon
