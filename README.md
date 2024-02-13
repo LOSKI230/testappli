@@ -23,7 +23,7 @@ Ce fichier détaille les commandes symfony réaliséés pour chaque question.
 • composer require --dev symfony/maker-bundle
 • composer require doctrine/doctrine-migrations-bundle "^3.0"
 • symfony console doctrine:database:create
-• symfony console make:entity leçon
+• symfony console make:entity lecon
 • symfony console make:migration
 • symfony console doctrine:migrations:migrate
 ```
