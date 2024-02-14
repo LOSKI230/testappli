@@ -92,7 +92,10 @@ modification puis mise à jour des fixtures :
 via : {% if is_granted('IS_AUTHENTICATED_FULLY') and is_granted('ROLE_PROFESSEUR') %}
 •recuperation de l'utilisateur connécté pour en faire l'auteur de la leçcon crée
 
-
+```
+### question10
+```
+Rajout des contraintes sur la  modification et la suppression uniquement accessible par un professeur 
 
 
 

@@ -19,6 +19,10 @@
                 <th>Description</th>
                 <td>{{ lecon.description | markdown | raw }}</td>
             </tr>
+            <tr>
+                <th>Professeur</th>
+                <td>{{ lecon.professeur.nom }}</td>
+            </tr>
         </tbody>
     </table>
 

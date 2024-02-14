@@ -65,6 +65,7 @@ class LeconController extends AbstractController
     public function edit(Request $request, Lecon $lecon, EntityManagerInterface $entityManager): Response
     {
         $form = $this->createForm(LeconType::class, $lecon);
+
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

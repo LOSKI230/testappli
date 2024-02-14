@@ -14,6 +14,7 @@ class LeconType extends AbstractType
         $builder
             ->add('nom')
             ->add('description')
+
         ;
     }
 
