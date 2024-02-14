@@ -23,6 +23,7 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
+                    {% if is_granted('IS_AUTHENTICATED_FULLY')%}
                     <li class="nav-item active">
                         {% if is_granted('IS_AUTHENTICATED_FULLY') and is_granted('ROLE_PROFESSEUR') %}
                             <a class="nav-link" href="{{ path('app_lecon_new') }}">Ajout de leçon</a>
@@ -32,12 +33,14 @@
                         <a class="nav-link" href="{{ path('app_lecon_index') }}">Accueil</a>
                     </li>
 
+
                 </ul>
 
             </div>
             <button onclick="location.href='{{ path('app_logout') }}'" class="btn btn-outline-danger"  style="float: right">
                 Déconnexion
             </button>
+            {% endif %}
         </div>
     </nav>
 

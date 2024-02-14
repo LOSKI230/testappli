@@ -95,7 +95,8 @@ via : {% if is_granted('IS_AUTHENTICATED_FULLY') and is_granted('ROLE_PROFESSEUR
 ```
 ### question10
 ```
-Rajout des contraintes sur la  modification et la suppression uniquement accessible par un professeur 
+Rajout des contraintes sur la  modification et la suppression uniquement accessible par un professeur
+correction de la navbar avec les boutons qui s'affichent que quand il est bien authentifié  
 
 
 
