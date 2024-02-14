@@ -29,8 +29,13 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ path('app_lecon_index') }}">Accueil</a>
                     </li>
+
                 </ul>
+
             </div>
+            <button onclick="location.href='{{ path('app_login') }}'" class="btn btn-outline-success"  style="float: right">
+                Connexion
+            </button>
         </div>
     </nav>
         {% block body %}

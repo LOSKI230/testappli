@@ -61,6 +61,21 @@ Pour la pagination:
 • modification du controleur et d'index.html.twig
 ```
 
+### question7
+```
+Création de l’entité User avec:
+• symfony console make:user
+• symfony console m:mig
+• symfony console d:m:m
+• ajout des attributs prenom et nom
+• modification de RegistrationFormType.php,Register.html.twig (Pour ajouter nom et prenom)
+Création du module d’authentification
+• symfony console make:auth
+• Modifier public function onAuthenticationSuccess
+Création du module d’authentification
+• symfony console make:registration-form
+```
+
 
 
 

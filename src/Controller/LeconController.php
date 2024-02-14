@@ -20,7 +20,7 @@ class LeconController extends AbstractController
     {   $lecon =  $leconRepository->findAll();
         $pageslecons = $paginator->paginate(
             $lecon,
-            $request->query->getInt('page',1),5
+            $request->query->getInt('page',1),8
         );
         return $this->render('lecon/index.html.twig', [
             'lecons' => $pageslecons,
