@@ -74,6 +74,7 @@ Création du module d’authentification
 • Modifier public function onAuthenticationSuccess
 Création du module d’authentification
 • symfony console make:registration-form
+• mise en place du role professeur par défaut
 ```
 ### question8
 ```
@@ -85,6 +86,12 @@ mise à jour des migrations:
 modification puis mise à jour des fixtures :
 • symfony console doctrine:fixtures:load
 ```
+### question9
+```
+• mise en place de l'autorisation de creation d'une lecon que par un professeur connecté
+via : {% if is_granted('IS_AUTHENTICATED_FULLY') and is_granted('ROLE_PROFESSEUR') %}
+•recuperation de l'utilisateur connécté pour en faire l'auteur de la leçcon crée
+
 
 
 

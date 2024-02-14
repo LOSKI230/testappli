@@ -24,7 +24,9 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="{{ path('app_lecon_new') }}">Ajout de leçon</a>
+                        {% if is_granted('IS_AUTHENTICATED_FULLY') and is_granted('ROLE_PROFESSEUR') %}
+                            <a class="nav-link" href="{{ path('app_lecon_new') }}">Ajout de leçon</a>
+                        {% endif %}
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ path('app_lecon_index') }}">Accueil</a>
@@ -33,11 +35,13 @@
                 </ul>
 
             </div>
-            <button onclick="location.href='{{ path('app_login') }}'" class="btn btn-outline-success"  style="float: right">
-                Connexion
+            <button onclick="location.href='{{ path('app_logout') }}'" class="btn btn-outline-danger"  style="float: right">
+                Déconnexion
             </button>
         </div>
     </nav>
+
+
         {% block body %}
 
 

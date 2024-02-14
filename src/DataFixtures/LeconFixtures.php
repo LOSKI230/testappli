@@ -29,11 +29,30 @@ class LeconFixtures extends Fixture
                 $user,'secret'
             ))
             ->setRoles(['ROLE_PROFESSEUR'])
-            ->setNom('toto')
-            ->setPrenom('tata');
+            ->setNom('admin')
+            ->setPrenom('toto');
+        $user3 = new User();
+        $user3->setLogin('admin2')
 
+            ->setPassword($this->passwordHasher->hashPassword(
+                $user3,'secret'
+            ))
+            ->setRoles(['ROLE_PROFESSEUR'])
+            ->setNom('admin2')
+            ->setPrenom('toto');
 
+        $user2 = new User();
+        $user2->setLogin('user')
+
+            ->setPassword($this->passwordHasher->hashPassword(
+                $user2,'secret'
+            ))
+            ->setRoles(['ROLE_USER'])
+            ->setNom('user')
+            ->setPrenom('normal');
+        $manager->persist($user2);
         $manager->persist($user);
+        $manager->persist($user3);
 
      
         for ($i = 0; $i < 10; $i++) {

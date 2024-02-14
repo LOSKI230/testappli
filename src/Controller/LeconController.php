@@ -35,7 +35,13 @@ class LeconController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager->persist($lecon);
+            $user1 = $this->getUser();
+            $lecon1 = new Lecon();
+            $lecon1->setNom($lecon->getNom())
+                ->setDescription($lecon->getDescription())
+                ->setProfesseur($user1);
+
+            $entityManager->persist($lecon1);
             $entityManager->flush();
 
             return $this->redirectToRoute('app_lecon_index', [], Response::HTTP_SEE_OTHER);
