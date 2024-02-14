@@ -45,3 +45,23 @@ Ce fichier détaille les commandes symfony réalisées pour chaque question.
 • ajout de la barre de navigation avec la balise nav de bootstrap
 • des ajustements ont été effectués, incluant l'ajout des boutons Supprimer, Afficher, Modifier, Retour, ainsi que quelques autres paramètres pour embellir l'application
 ```
+### question6
+```
+• symfony composer require cebe/markdown
+• ajout du service cebe\markdown\Markdown: ~ dans config/services.yaml
+• symfony console make:twig-extension
+• modification des fichiers MarkdownExtension.php, MarkdownExtensionRuntime.php
+• modification des fixtures ainsi que  des templates
+Nous en avons profité pour installer la fonctionnalité truncate ainsi que la pagination avec les commandes suivantes:
+Pour le tuncate:
+• composer require twig/string-extra
+• composer require twig/extra-bundle
+Pour la pagination:
+• symfony composer require knplabs/knp-paginator-bundle
+• modification du controleur et d'index.html.twig
+```
+
+
+
+
+

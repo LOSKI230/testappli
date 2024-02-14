@@ -15,7 +15,7 @@ class LeconFixtures extends Fixture
         $faker = \Faker\Factory::create("fr_FR");
         for ($i = 0; $i < 10; $i++) {
             $lecon = new Lecon();
-            $lecon->setNom($faker->sentence)
+            $lecon->setNom($markdown->$faker->sentence)
                 ->setDescription(join("\n\n**", $faker->paragraphs));
 
             $manager->persist($lecon);

@@ -19,23 +19,35 @@
             <tr>
                 <td>{{ lecon.id }}</td>
                 <td>{{ lecon.nom }}</td>
-                <td>{{ lecon.description }}</td>
+                <td>{{ lecon.description | u.truncate(100,' ...',false) | markdown | raw }}</td>
 
                 <td >
                     <div class="d-flex justify-content-between">
-                    <a class="btn btn-outline-primary  mx-1" href="{{ path('app_lecon_show', {'id': lecon.id}) }}">Consulter</a>
-                    <a class="btn btn-outline-secondary mx-1" href="{{ path('app_lecon_edit', {'id': lecon.id}) }}">Modifier</a>
+                    <button  onclick="location.href='{{ path('app_lecon_show', {'id': lecon.id}) }}'" class="btn btn-outline-primary  mx-1" >Consulter</button>
+                    <button onclick="location.href='{{ path('app_lecon_edit', {'id': lecon.id}) }}'" class="btn btn-outline-secondary mx-1" >Modifier</button>
                         {{ include('lecon/_delete_form.html.twig') }}
                     </div>
                 </td>
-
-
             </tr>
+
         {% else %}
             <tr>
                 <td colspan="4">no records found</td>
             </tr>
         {% endfor %}
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination justify-content-center">
+                            {{ knp_pagination_render(lecons,'twitter_bootstrap_v4_pagination.html.twig') }}
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+
         </tbody>
     </table>
 {% endblock %}

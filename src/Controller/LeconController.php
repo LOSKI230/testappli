@@ -6,6 +6,7 @@ use App\Entity\Lecon;
 use App\Form\LeconType;
 use App\Repository\LeconRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -15,10 +16,14 @@ use Symfony\Component\Routing\Attribute\Route;
 class LeconController extends AbstractController
 {
     #[Route('/', name: 'app_lecon_index', methods: ['GET'])]
-    public function index(LeconRepository $leconRepository): Response
-    {
+    public function index(Request $request,LeconRepository $leconRepository,PaginatorInterface $paginator): Response
+    {   $lecon =  $leconRepository->findAll();
+        $pageslecons = $paginator->paginate(
+            $lecon,
+            $request->query->getInt('page',1),5
+        );
         return $this->render('lecon/index.html.twig', [
-            'lecons' => $leconRepository->findAll(),
+            'lecons' => $pageslecons,
         ]);
     }
 

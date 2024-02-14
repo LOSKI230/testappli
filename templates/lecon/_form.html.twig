@@ -1,5 +1,5 @@
 {{ form_start(form) }}
     {{ form_widget(form) }}
     <button class="btn btn-outline-success">{{ button_label|default('Enregistrer') }}</button>
-    <a class="btn btn-outline-primary mx-1" href="{{ path('app_lecon_index') }}">Retour</a>
+    <button onclick="location.href='{{ path('app_lecon_index') }}'" class="btn btn-outline-primary mx-1">Retour</button>
 {{ form_end(form) }}
