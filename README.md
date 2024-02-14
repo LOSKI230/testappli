@@ -79,24 +79,31 @@ Création du module d’authentification
 ### question8
 ```
 • creation d'une relation ManytoOne entre les entités leçon et user
-• modification des fixtures pour donner à chaque leçcon un unique professeur
+• modification des fixtures pour donner à chaque leçon un unique professeur
 mise à jour des migrations:
 • symfony console make:migration
 • symfony console doctrine:migrations:migrate
 modification puis mise à jour des fixtures :
 • symfony console doctrine:fixtures:load
+• mise en place d'un bouton connexion temporaire au niveau de la barre de navigation pour tester les connexions
 ```
 ### question9
 ```
 • mise en place de l'autorisation de creation d'une lecon que par un professeur connecté
 via : {% if is_granted('IS_AUTHENTICATED_FULLY') and is_granted('ROLE_PROFESSEUR') %}
-•recuperation de l'utilisateur connécté pour en faire l'auteur de la leçcon crée
-
+•recuperation de l'utilisateur connécté pour en faire l'auteur de la leçcon créée
 ```
+
 ### question10
 ```
 Rajout des contraintes sur la  modification et la suppression uniquement accessible par un professeur
-correction de la navbar avec les boutons qui s'affichent que quand il est bien authentifié  
+correction de la navbar avec les boutons qui s'affichent que quand il est bien authentifié 
+```
+### question11
+```
+embellissement général du site
+```
+
 
 
 

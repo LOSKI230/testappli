@@ -1,6 +1,7 @@
 {{ form_start(form) }}
     {{ form_widget(form) }}
-<label for="lecon_professeur" class="form-label required">Professeur</label><input readonly id="lecon_professeur" name="lecon[description]" required="required" maxlength="255" class="form-control" value="{{ lecon.professeur.nom }}">
+<p style="text-align: center;width: 100%;padding-top: 20px">
 <button class="btn btn-outline-success">{{ button_label|default('Enregistrer') }}</button>
 <button onclick="location.href='{{ path('app_lecon_index') }}'" class="btn btn-outline-primary mx-1">Retour</button>
+</p>
 {{ form_end(form) }}

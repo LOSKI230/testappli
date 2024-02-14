@@ -50,6 +50,7 @@ class LeconFixtures extends Fixture
             ->setRoles(['ROLE_USER'])
             ->setNom('user')
             ->setPrenom('normal');
+
         $manager->persist($user2);
         $manager->persist($user);
         $manager->persist($user3);

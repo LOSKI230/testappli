@@ -3,7 +3,7 @@
 {% block title %}Register{% endblock %}
 
 {% block body %}
-    <h1>Register</h1>
+    <p style="align-content: center;width: max-content"><h1 class="h3 mb-3 font-weight-normal" style="text-align: center" >Inscription</h1></p>
 
     {{ form_errors(registrationForm) }}
 
@@ -19,7 +19,9 @@
             label: 'Password'
         }) }}
         {{ form_row(registrationForm.agreeTerms) }}
-
-        <button type="submit" class="btn">Register</button>
+        <p style="text-align: center;width: 100%;padding-top: 20px">
+        <button type="submit" class="btn btn-outline-success">Inscription</button>
+        <button onclick="location.href='{{ path('app_login') }}'" class="btn btn-outline-primary">Retour</button>
+        </p>
     {{ form_end(registrationForm) }}
 {% endblock %}

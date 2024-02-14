@@ -8,7 +8,7 @@
     <table class="table w-100">
         <thead>
             <tr>
-                <th>Id</th>
+
                 <th>Nom</th>
                 <th>Description</th>
                 <th>Professeur</th>
@@ -18,7 +18,7 @@
         <tbody>
         {% for lecon in lecons %}
             <tr>
-                <td>{{ lecon.id }}</td>
+
                 <td>{{ lecon.nom }}</td>
 
                 <td>{{ lecon.description | u.truncate(100,' ...',false) | markdown | raw }}</td>
@@ -40,7 +40,7 @@
                 <td colspan="4">no records found</td>
             </tr>
         {% endfor %}
-        <div class="container">
+        <div class="container" style="padding-top: 10px">
             <div class="row">
                 <div class="col-md-12">
                     <nav aria-label="Page navigation example">
