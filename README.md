@@ -75,6 +75,16 @@ Création du module d’authentification
 Création du module d’authentification
 • symfony console make:registration-form
 ```
+### question8
+```
+• creation d'une relation ManytoOne entre les entités leçon et user
+• modification des fixtures pour donner à chaque leçcon un unique professeur
+mise à jour des migrations:
+• symfony console make:migration
+• symfony console doctrine:migrations:migrate
+modification puis mise à jour des fixtures :
+• symfony console doctrine:fixtures:load
+```
 
 
 

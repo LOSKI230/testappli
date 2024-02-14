@@ -11,6 +11,7 @@
                 <th>Id</th>
                 <th>Nom</th>
                 <th>Description</th>
+                <th>Professeur</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -19,7 +20,9 @@
             <tr>
                 <td>{{ lecon.id }}</td>
                 <td>{{ lecon.nom }}</td>
+
                 <td>{{ lecon.description | u.truncate(100,' ...',false) | markdown | raw }}</td>
+                <td>{{ lecon.professeur.nom }}</td>
 
                 <td >
                     <div class="d-flex justify-content-between">

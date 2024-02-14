@@ -8,6 +8,9 @@ use Doctrine\ORM\Mapping as ORM;
 #[ORM\Entity(repositoryClass: LeconRepository::class)]
 class Lecon
 {
+
+
+
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
@@ -18,6 +21,23 @@ class Lecon
 
     #[ORM\Column(length: 255)]
     private ?string $description = null;
+
+    #[ORM\ManyToOne(inversedBy: 'lecons')]
+    private  ?User $professeur = null;
+
+    public function getProfesseur(): ?User
+    {
+        return $this->professeur;
+    }
+
+    public function setProfesseur(?User $professeur): static
+    {
+        $this->professeur = $professeur;
+        return $this;
+    }
+
+
+
 
     public function getId(): ?int
     {

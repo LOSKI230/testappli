@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use App\Repository\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -25,6 +27,19 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 255)]
     private ?string $prenom = null;
 
+    #[ORM\OneToMany(mappedBy: 'professeur', targetEntity: Lecon::class)]
+    private Collection $lecons;
+
+    public function getLecons(): Collection
+    {
+        return $this->lecons;
+    }
+
+    public function setLecons(Collection $lecons): void
+    {
+        $this->lecons = $lecons;
+    }
+
     public function getPrenom(): ?string
     {
         return $this->prenom;
@@ -42,9 +57,10 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this->nom;
     }
 
-    public function setNom(?string $nom): void
+    public function setNom(?string $nom): static
     {
         $this->nom = $nom;
+        return $this;
     }
 
     /**
