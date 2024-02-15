@@ -110,18 +110,23 @@ embellissement général du site
 • mise à jour des entités lecon et user avec:
 -liste des participants à une leçon 
 - liste des leçons auxquelles l'utilisateur participe
--variable statut pour voir si l'utilisateur est deja inscrit
+- variable statut pour voir si l'utilisateur est deja inscrit
 • mise à jour du controleur avec les routes app_lecon_inscription et app_lecon_desinscription
 • A cette étape pas de distinction entre les professeurs et les éléves
 ```
 ### question13
 ```
-•Ajout d'un bouton participants pour permettre au professeur de visualiser les éleves inscrits
-•Ajout du bouton mes_leçons au niveau de  la navbar pour visualiser les leçons auxquelles l'utilisateur participe 
-•Ajout d'un nouveau twig (show_mes_lecon.html.twig) pour afficher les leçons des utilisateurs
-•Ajout d'un nouveau twig (participants.html.twig) pour afficher les participants à une leçon
+• Ajout d'un bouton participants pour permettre au professeur de visualiser les éleves inscrits
+• Ajout du bouton mes_leçons au niveau de  la navbar pour visualiser les leçons auxquelles l'utilisateur participe 
+• Ajout d'un nouveau twig (show_mes_lecon.html.twig) pour afficher les leçons des utilisateurs
+• Ajout d'un nouveau twig (participants.html.twig) pour afficher les participants à une leçon
 
 ```
+### qyestion14
+```
+• embelissement general du site
+```
+
 
 
 
