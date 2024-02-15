@@ -97,7 +97,8 @@ via : {% if is_granted('IS_AUTHENTICATED_FULLY') and is_granted('ROLE_PROFESSEUR
 ### question10
 ```
 Rajout des contraintes sur la  modification et la suppression uniquement accessible par un professeur
-correction de la navbar avec les boutons qui s'affichent que quand il est bien authentifié 
+correction de la navbar avec les boutons qui s'affichent que quand il est bien authentifié
+Si l'utilisateur non connecté, accéde à une page via une url (de modification / d'ajout par exemple), sera redirigé vers la page de connexion.  
 ```
 ### question11
 ```
