@@ -3,10 +3,12 @@
 {% block title %}New Lecon{% endblock %}
 
 {% block body %}
-    <h1>Ajout d'une leçon</h1>
+    <div class="container">
+        <h1>Ajout d'une leçon</h1>
 
-    {{ include('lecon/_form.html.twig') }}
 
+        {{ include('lecon/_form.html.twig') }}
 
+    </div>
 
 {% endblock %}

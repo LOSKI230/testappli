@@ -3,33 +3,42 @@
 {% block title %}Log in!{% endblock %}
 
 {% block body %}
-<form method="post">
-    {% if error %}
-        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-    {% endif %}
+    <div class="container">
+        <div class="row justify-content-lg-center justify-content-md-center justify-content-sm-center">
+            <div class="col-8">
+                <form method="post">
+                    {% if error %}
+                        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                    {% endif %}
 
-    {% if app.user %}
-        <div class="mb-3">
-            You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
+                    {% if app.user %}
+                        <div class="mb-3">
+                            You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
+                        </div>
+                    {% endif %}
+
+                    <p style="align-content: center;width: max-content">
+                    <h1 class="h3 mb-3 font-weight-normal" style="text-align: center">Connexion</h1></p>
+                    <label for="inputLogin">Login</label>
+                    <input type="text" value="{{ last_username }}" name="login" id="inputLogin" class="form-control"
+                           autocomplete="username" required autofocus>
+                    <label for="inputPassword">Password</label>
+                    <input type="password" name="password" id="inputPassword" class="form-control"
+                           autocomplete="current-password" required>
+
+                    <input type="hidden" name="_csrf_token"
+                           value="{{ csrf_token('authenticate') }}"
+                    >
+                    <p style="text-align: center;width: 100%;padding-top: 20px">
+                        <button class="btn btn-outline-primary" type="submit">
+                            Connexion
+                        </button>
+                        <button onclick="location.href='{{ path('app_register') }}'" class="btn btn-outline-success">
+                            Inscription
+                        </button>
+                    </p>
+                </form>
+            </div>
         </div>
-    {% endif %}
-
-    <p style="align-content: center;width: max-content"><h1 class="h3 mb-3 font-weight-normal" style="text-align: center" >Connexion</h1></p>
-    <label for="inputLogin">Login</label>
-    <input type="text" value="{{ last_username }}" name="login" id="inputLogin" class="form-control" autocomplete="username" required autofocus>
-    <label for="inputPassword">Password</label>
-    <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
-
-    <input type="hidden" name="_csrf_token"
-           value="{{ csrf_token('authenticate') }}"
-    >
-    <p style="text-align: center;width: 100%;padding-top: 20px">
-    <button   class="btn btn-outline-primary" type="submit">
-        Connexion
-    </button>
-    <button   onclick="location.href='{{ path('app_register') }}'" class="btn btn-outline-success" >
-        Inscription
-    </button>
-    </p>
-</form>
+    </div>
 {% endblock %}

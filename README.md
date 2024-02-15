@@ -104,8 +104,21 @@ Si l'utilisateur non connecté, accéde à une page via une url (de modification
 ```
 embellissement général du site
 ```
-
-
+### question12
+```
+• ajout des boutons inscription et desinscription
+• mise à jour des entités lecon et user avec:
+-liste des participants à une leçon 
+- liste des leçons auxquelles l'utilisateur participe
+-variable statut pour voir si l'utilisateur est deja inscrit
+• mise à jour du controleur avec les routes app_lecon_inscription et app_lecon_desinscription
+• A cette étape pas de distinction entre les professeurs et les éléves
+```
+### question13
+```
+•Ajout d'une rubrique participants dans la page de consultation d'une leçon pour permettre au professeur de visualiser les éleves inscrits
+•Ajout du bouton mes_leçons au niveau de  la navbar pour visualiser les leçons auxquelles l'utilisateur participe 
+•Ajout d'un nouveau twig (show_mes_lecon.html.twig) pour afficher les leçons des utilisateurs
 
 
 

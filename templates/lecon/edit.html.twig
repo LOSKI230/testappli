@@ -3,13 +3,27 @@
 {% block title %}Edit Lecon{% endblock %}
 
 {% block body %}
-    <h1>Modifier votre Leçon!</h1>
-   <div>
-       <label for="lecon_professeur" class="form-label required">Professeur</label><input readonly id="lecon_professeur" name="lecon[description]" required="required" maxlength="255" class="form-control" value="{{ lecon.professeur.nom }}">
-    {{ include('lecon/_form.html.twig', {'button_label': 'Enregistrer'}) }}
+    <div class="container">
+        <div class="row justify-content-lg-center justify-content-md-center justify-content-sm-center">
+            <div class="col-12">
+                <h1>Modifier votre Leçon!</h1>
+                <div>
+                    <label for="lecon_professeur" class="form-label required">Professeur</label><input readonly
+                                                                                                       id="lecon_professeur"
+                                                                                                       name="lecon[description]"
+                                                                                                       required="required"
+                                                                                                       maxlength="255"
+                                                                                                       class="form-control"
+                                                                                                       value="{{ lecon.professeur.nom }}">
+                    {{ include('lecon/_form.html.twig', {'button_label': 'Enregistrer'}) }}
 
 
-       <MARQUEE> Pensez à enregistrer vos modifications :) ! </MARQUEE>
-   </div>
+                    <MARQUEE> Pensez à enregistrer vos modifications :) !</MARQUEE>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
 
 {% endblock %}

@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Lecon;
+use App\Entity\User;
 use App\Form\LeconType;
 use App\Repository\LeconRepository;
 use Doctrine\ORM\EntityManagerInterface;
@@ -132,7 +133,21 @@ class LeconController extends AbstractController
         return $this->redirectToRoute('app_lecon_index', [], Response::HTTP_SEE_OTHER);
 
     }
+    #[Route('/{id}/inscrit', name: 'app_lecon_show_mes_lecons', methods: ['GET', 'POST'])]
 
+    public function showMesLecons(User $user): Response
+    {
+        $lecon = $user->getInscriptions();
 
+        foreach ($lecon as $item){
+
+            if($item->getParticipants()->contains($user)){
+                $item->setStatut('Inscrit');
+            };
+        }
+        return $this->render('lecon/show_mes_lecon.html.twig', [
+            'user' => $user,
+        ]);
+    }
 
 }

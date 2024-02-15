@@ -3,25 +3,29 @@
 {% block title %}Register{% endblock %}
 
 {% block body %}
-    <p style="align-content: center;width: max-content"><h1 class="h3 mb-3 font-weight-normal" style="text-align: center" >Inscription</h1></p>
+    <div class="container">
 
-    {{ form_errors(registrationForm) }}
+        <p style="align-content: center;width: max-content">
+        <h1 class="h3 mb-3 font-weight-normal" style="text-align: center">Inscription</h1></p>
 
-    {{ form_start(registrationForm) }}
-    {{ form_row(registrationForm.prenom, {
-        label: 'Prenom'
-    }) }}
-    {{ form_row(registrationForm.nom, {
-        label: 'Nom'
-    }) }}
+        {{ form_errors(registrationForm) }}
+
+        {{ form_start(registrationForm) }}
+        {{ form_row(registrationForm.prenom, {
+            label: 'Prenom'
+        }) }}
+        {{ form_row(registrationForm.nom, {
+            label: 'Nom'
+        }) }}
         {{ form_row(registrationForm.login) }}
         {{ form_row(registrationForm.plainPassword, {
             label: 'Password'
         }) }}
         {{ form_row(registrationForm.agreeTerms) }}
         <p style="text-align: center;width: 100%;padding-top: 20px">
-        <button type="submit" class="btn btn-outline-success">Inscription</button>
-        <button onclick="location.href='{{ path('app_login') }}'" class="btn btn-outline-primary">Retour</button>
+            <button type="submit" class="btn btn-outline-success">Inscription</button>
+            <button onclick="location.href='{{ path('app_login') }}'" class="btn btn-outline-primary">Retour</button>
         </p>
-    {{ form_end(registrationForm) }}
+        {{ form_end(registrationForm) }}
+    </div>
 {% endblock %}

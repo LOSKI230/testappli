@@ -17,7 +17,7 @@
             </tr>
             </thead>
             <tbody>
-            {% for lecon in lecons %}
+            {% for lecon in user.inscriptions %}
                 <tr>
 
                     <td>{{ lecon.nom }}</td>
@@ -59,11 +59,7 @@
             <div class="container" style="padding-top: 10px">
                 <div class="row">
                     <div class="col-md-12">
-                        <nav aria-label="Page navigation example">
-                            <ul class="pagination justify-content-center">
-                                {{ knp_pagination_render(lecons,'twitter_bootstrap_v4_pagination.html.twig') }}
-                            </ul>
-                        </nav>
+
                     </div>
                 </div>
             </div>
