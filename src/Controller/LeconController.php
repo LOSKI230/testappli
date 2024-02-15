@@ -13,17 +13,24 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Component\Security\Http\Attribute\IsGranted;
 
-#[IsGranted('IS_AUTHENTIFICATED_FULLY')]
+#[IsGranted('IS_AUTHENTICATED_FULLY')]
 #[Route('/lecon')]
 class LeconController extends AbstractController
 {
     #[Route('/', name: 'app_lecon_index', methods: ['GET'])]
     public function index(Request $request,LeconRepository $leconRepository,PaginatorInterface $paginator): Response
     {   $lecon =  $leconRepository->findAll();
+        $user = $this->getUser();
         $pageslecons = $paginator->paginate(
             $lecon,
             $request->query->getInt('page',1),8
         );
+        foreach ($lecon as $item){
+
+            if($item->getParticipants()->contains($user)){
+                $item->setStatut('Inscrit');
+            };
+        }
         return $this->render('lecon/index.html.twig', [
             'lecons' => $pageslecons,
         ]);
@@ -58,8 +65,10 @@ class LeconController extends AbstractController
     #[Route('/{id}', name: 'app_lecon_show', methods: ['GET'])]
     public function show(Lecon $lecon): Response
     {
+        $participants = $lecon->getParticipants();
         return $this->render('lecon/show.html.twig', [
             'lecon' => $lecon,
+            'participants'=> $participants
         ]);
     }
 
@@ -92,4 +101,38 @@ class LeconController extends AbstractController
 
         return $this->redirectToRoute('app_lecon_index', [], Response::HTTP_SEE_OTHER);
     }
+    #[Route('/{id}/inscription_lecon', name: 'app_lecon_inscription', methods: ['GET', 'POST'])]
+    public function inscription_lecon(Request $request, Lecon $lecon, EntityManagerInterface $entityManager): Response
+    {
+
+        $user = $this->getUser();
+        $lecon->addParticipants($user);
+        $user->addInscriptions($lecon);
+        $entityManager->persist($lecon);
+        $entityManager->flush();
+        $entityManager->persist($user);
+        $entityManager->flush();
+
+
+        return $this->redirectToRoute('app_lecon_index', [], Response::HTTP_SEE_OTHER);
+
+    }
+    #[Route('/{id}/desinscription_lecon', name: 'app_lecon_desinscription', methods: ['GET', 'POST'])]
+    public function desinscription_lecon(Request $request, Lecon $lecon, EntityManagerInterface $entityManager): Response
+    {
+
+        $user = $this->getUser();
+        $lecon->removeParticipants($user);
+        $user->removeInscription($lecon);
+        $entityManager->persist($lecon);
+        $entityManager->flush();
+        $entityManager->persist($user);
+        $entityManager->flush();
+
+        return $this->redirectToRoute('app_lecon_index', [], Response::HTTP_SEE_OTHER);
+
+    }
+
+
+
 }

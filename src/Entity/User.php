@@ -27,6 +27,20 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 255)]
     private ?string $prenom = null;
 
+    public function getInscriptions(): Collection
+    {
+        return $this->inscriptions;
+    }
+
+    public function setInscriptions(Collection $inscriptions): static
+    {
+        $this->inscriptions = $inscriptions;
+        return $this;
+    }
+    #[ORM\ManyToMany(targetEntity: Lecon::class)]
+    private ?Collection $inscriptions;
+
+
     #[ORM\OneToMany(mappedBy: 'professeur', targetEntity: Lecon::class)]
     private Collection $lecons;
 
@@ -137,5 +151,21 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
+    }
+    public function addInscriptions(Lecon $inscrits): static
+    {
+        if (!$this->inscriptions->contains($inscrits)) {
+            $this->inscriptions->add($inscrits);
+        }
+
+        return $this;
+    }
+    public function removeInscription(Lecon $inscrits): static
+    {
+        if ($this->inscriptions->contains($inscrits)) {
+            $this->inscriptions->removeElement($inscrits);
+        }
+
+        return $this;
     }
 }

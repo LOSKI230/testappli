@@ -5,9 +5,12 @@ namespace App\DataFixtures;
 use App\Entity\Lecon;
 use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Persistence\ObjectManager;
+use phpDocumentor\Reflection\Types\Collection;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Faker\Factory;
+use function Sodium\add;
 
 class LeconFixtures extends Fixture
 {
@@ -55,12 +58,16 @@ class LeconFixtures extends Fixture
         $manager->persist($user);
         $manager->persist($user3);
 
-     
+
         for ($i = 0; $i < 10; $i++) {
             $lecon = new Lecon();
+            $participants = new ArrayCollection();
+            $participants->add($user);
             $lecon->setNom($faker->sentence)
                 ->setDescription(join("\n\n**", $faker->paragraphs))
-              ->setProfesseur($user);
+                ->setProfesseur($user)
+                ->setParticipants($participants);
+
 
             $manager->persist($lecon);
         }

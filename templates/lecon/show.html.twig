@@ -7,28 +7,35 @@
 
     <table class="table">
         <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ lecon.id }}</td>
-            </tr>
-            <tr>
-                <th>Nom</th>
-                <td>{{ lecon.nom }}</td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>{{ lecon.description | markdown | raw }}</td>
-            </tr>
-            <tr>
-                <th>Professeur</th>
-                <td>{{ lecon.professeur.nom }}</td>
-            </tr>
+        <tr>
+            <th>Id</th>
+            <td>{{ lecon.id }}</td>
+        </tr>
+        <tr>
+            <th>Nom</th>
+            <td>{{ lecon.nom }}</td>
+        </tr>
+        <tr>
+            <th>Description</th>
+            <td>{{ lecon.description | markdown | raw }}</td>
+        </tr>
+        <tr>
+            <th> Professeur</th>
+            <td>{{ lecon.professeur.nom }}</td>
+        </tr>
+        <tr>
+            <th>Participant</th>
+            <td>
+                {% for p in participants %}
+                    {{ p.nom }} ,
+                {% endfor %}
+            </td>
+        </tr>
         </tbody>
     </table>
 
     <div>
         <button onclick="location.href='{{ path('app_lecon_index') }}'" class="btn btn-outline-primary">Retour</button>
-
 
 
     </div>
