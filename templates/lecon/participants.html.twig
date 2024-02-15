@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Lecon{% endblock %}
+
+{% block body %}
+
+    <div class="list-group">
+        <button type="button" class="list-group-item list-group-item-action" style="background-color: lightgray">
+            Liste des participants
+        </button>
+        {% for p in participants %}
+        <button type="button" class="list-group-item list-group-item-action"><strong>Nom: </strong>  {{ p.nom }} <strong> Prenom:</strong> {{ p.prenom }}</button>
+        {% else %}
+
+
+                <button type="button" class="list-group-item list-group-item-action">Aucun participant</button>
+
+
+        {% endfor %}
+    </div>
+
+{% endblock %}

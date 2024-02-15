@@ -149,5 +149,15 @@ class LeconController extends AbstractController
             'user' => $user,
         ]);
     }
+    #[Route('/{id}/participants', name: 'app_lecon_participants', methods: ['GET', 'POST'])]
+
+    public function afficherParticipants(Lecon $lecon): Response
+    {
+        $participants = $lecon->getParticipants();
+
+        return $this->render('lecon/participants.html.twig', [
+            'participants' => $participants,
+        ]);
+    }
 
 }

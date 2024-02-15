@@ -25,21 +25,7 @@
                 <th> Professeur</th>
                 <td>{{ lecon.professeur.nom }}</td>
             </tr>
-            <tr>
 
-                <th>Participants</th>
-                <td>
-                    {% for p in participants %}
-                    {{ p.nom }} ,
-                    {% else %}
-                Aucun participant
-
-                {% endfor %}
-
-                </td>
-
-
-            </tr>
             </tbody>
         </table>
 

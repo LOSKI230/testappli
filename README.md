@@ -116,14 +116,11 @@ embellissement général du site
 ```
 ### question13
 ```
-•Ajout d'une rubrique participants dans la page de consultation d'une leçon pour permettre au professeur de visualiser les éleves inscrits
+•Ajout d'un bouton participants pour permettre au professeur de visualiser les éleves inscrits
 •Ajout du bouton mes_leçons au niveau de  la navbar pour visualiser les leçons auxquelles l'utilisateur participe 
 •Ajout d'un nouveau twig (show_mes_lecon.html.twig) pour afficher les leçons des utilisateurs
+•Ajout d'un nouveau twig (participants.html.twig) pour afficher les participants à une leçon
 
-```
-### question14
-```
-embellissement général du site
 ```
 
 
