@@ -108,7 +108,6 @@ class LeconController extends AbstractController
     {
 
         $user = $this->getUser();
-        $lecon->addParticipants($user);
         $user->addInscriptions($lecon);
         $entityManager->persist($lecon);
         $entityManager->flush();

@@ -37,7 +37,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         $this->inscriptions = $inscriptions;
         return $this;
     }
-    #[ORM\ManyToMany(targetEntity: Lecon::class)]
+    #[ORM\ManyToMany(targetEntity: Lecon::class,mappedBy: "participants")]
     private ?Collection $inscriptions;
 
 
@@ -156,6 +156,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         if (!$this->inscriptions->contains($inscrits)) {
             $this->inscriptions->add($inscrits);
+            $inscrits->addParticipants($this);
         }
 
         return $this;

@@ -64,7 +64,6 @@ class LeconFixtures extends Fixture
         for ($i = 0; $i < 10; $i++) {
             $lecon = new Lecon();
             $participants = new ArrayCollection();
-            $participants->add($eleve);
             $lecon->setNom($faker->sentence)
                 ->setDescription(join("\n\n**", $faker->paragraphs))
                 ->setProfesseur($professeur)

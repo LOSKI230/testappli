@@ -39,7 +39,7 @@ class Lecon
     #[ORM\Column(length: 255)]
     private ?string $description = null;
 
-    #[ORM\ManyToMany(targetEntity: User::class)]
+    #[ORM\ManyToMany(targetEntity: User::class, inversedBy: "inscriptions")]
     private ?Collection $participants;
 
     public function getParticipants(): Collection
@@ -50,6 +50,7 @@ class Lecon
     public function setParticipants(Collection $participants): static
     {
         $this->participants = $participants;
+
         return $this;
     }
 
