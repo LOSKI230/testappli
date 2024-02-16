@@ -138,12 +138,14 @@ embellissement général du site
 ```
 ### question 16
 ```
-• Ajout des contraintes :
+• Ajout des contraintes principalement grâce à is_granted():
 
 -un admin ne peut supprimer un professeur qu'aprés avoir supprimer les leçons de ce dernier
 -suppression des boutons inscription et desinscription pour les professeurs et admins
 -un prof ne peut supprimer ou modifier que ses leçons
 -l'inscription est uniquement reservée aux élèves
+-les statuts ne s'affichent que pour les élèves
+
 ```
 
 

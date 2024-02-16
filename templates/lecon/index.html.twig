@@ -13,7 +13,9 @@
                 <th>Description</th>
                 <th>Professeur</th>
                 <th>actions</th>
+                {% if is_granted('ROLE_ELEVE') %}
                 <th>statut</th>
+                {% endif %}
             </tr>
             </thead>
             <tbody>
@@ -54,7 +56,9 @@
                         </div>
 
                     </td>
+                    {% if is_granted('ROLE_ELEVE') %}
                     <td>{{ lecon.statut }}</td>
+                    {% endif %}
                 </tr>
 
             {% else %}
