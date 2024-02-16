@@ -8,6 +8,7 @@ Fahmaoui Nada
 
 Ce fichier détaille les commandes symfony réalisées pour chaque question.
 
+
 ### question1 :
 
 ```
@@ -147,8 +148,14 @@ embellissement général du site
 -les statuts ne s'affichent que pour les élèves
 
 ```
+### question 17
+```
+• embelissement general du site
+```
 
-
-
-
-
+### POUR LES TESTS
+```
+• un eleve : login : eleve , mot de passe : secret
+• un professeur : login : professeur , mot de passe : secret
+• un admin : login : admin , mot de passe : secret
+```
