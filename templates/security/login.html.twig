@@ -3,32 +3,30 @@
 {% block title %}Log in!{% endblock %}
 
 {% block body %}
+    <body class="image">
     <div class="container">
-        <div class="row justify-content-lg-center justify-content-md-center justify-content-sm-center">
-            <div class="col-8">
-                <form method="post">
+        <div id="row" class="row justify-content-lg-center justify-content-md-center justify-content-sm-center">
+            <div class="col-md-4"> <!-- Réduit la largeur du formulaire -->
+                <form method="post" class="bg-dark text-light p-4 rounded">
                     {% if error %}
                         <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
                     {% endif %}
 
                     {% if app.user %}
                         <div class="mb-3">
-                            You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
+                            You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}" class="text-light">Logout</a>
                         </div>
                     {% endif %}
 
-                    <p style="align-content: center;width: max-content">
-                    <h1 class="h3 mb-3 font-weight-normal" style="text-align: center">Connexion</h1></p>
-                    <label for="inputLogin">Login</label>
-                    <input type="text" value="{{ last_username }}" name="login" id="inputLogin" class="form-control"
-                           autocomplete="username" required autofocus>
-                    <label for="inputPassword">Password</label>
-                    <input type="password" name="password" id="inputPassword" class="form-control"
-                           autocomplete="current-password" required>
+                    <h1 class="h3 mb-3 font-weight-normal" style="text-align: center">Connexion</h1>
+                    <label for="inputLogin" class="text-light">Login</label>
+                    <input type="text" value="{{ last_username }}" name="login" id="inputLogin" class="form-control form-control-sm bg-dark text-light" autocomplete="username" required autofocus>
 
-                    <input type="hidden" name="_csrf_token"
-                           value="{{ csrf_token('authenticate') }}"
-                    >
+                    <label for="inputPassword" class="text-light">Password</label>
+                    <input type="password" name="password" id="inputPassword" class="form-control form-control-sm bg-dark text-light" autocomplete="current-password" required>
+
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
                     <p style="text-align: center;width: 100%;padding-top: 20px">
                         <button class="btn btn-outline-primary" type="submit">
                             Connexion
@@ -41,4 +39,5 @@
             </div>
         </div>
     </div>
+    </body>
 {% endblock %}

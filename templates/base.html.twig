@@ -32,11 +32,13 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ path('app_lecon_index') }}">Accueil</a>
                 </li>
+                {% if is_granted('ROLE_ELEVE') %}
                 <li class="nav-item ">
 
                     <a class="nav-link" href="{{ path('app_lecon_show_mes_lecons', {'id':app.user.id}) }}">Mes lecons</a>
 
                 </li>
+                {% endif %}
 
 
             </ul>

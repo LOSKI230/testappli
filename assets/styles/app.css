@@ -1,10 +1,14 @@
-body {
-    background-color: white;
-
+body.image {
+    background-color: #343a40; /* Choisissez votre couleur de fond sombre ici */
+    color: #ffffff; /* Choisissez votre couleur de texte ici */
+    background-image: url('../styles/images/nick-morrison-FHnnjk1Yj7Y-unsplash.jpg'); /* Ajoutez le chemin de votre image ici */
+    background-size: cover; /* Assurez-vous que l'image couvre tout le fond */
+    background-position: center; /* Centrez l'image */
 }
 .navbar{
     background-color: #1a1d20;
 }
 
-
-
+div#row{
+    padding-top: 110px;
+}
