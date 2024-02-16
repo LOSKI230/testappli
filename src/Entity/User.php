@@ -168,4 +168,13 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
         return $this;
     }
+    public function addLecons(Lecon $lecon): static
+    {
+        if (!$this->lecons->contains($lecon)) {
+            $this->lecons->add($lecon);
+            $lecon->setProfesseur($this);
+        }
+
+        return $this;
+    }
 }

@@ -25,51 +25,54 @@ class LeconFixtures extends Fixture
     {
         $faker = \Faker\Factory::create("fr_FR");
         // un user
-        $user = new User();
-        $user->setLogin('admin')
+        $admin = new User();
+        $admin->setLogin('admin')
 
             ->setPassword($this->passwordHasher->hashPassword(
-                $user,'secret'
+                $admin,'secret'
             ))
-            ->setRoles(['ROLE_PROFESSEUR'])
+            ->setRoles(['ROLE_ADMIN'])
             ->setNom('admin')
-            ->setPrenom('toto');
-        $user3 = new User();
-        $user3->setLogin('admin2')
+            ->setPrenom('admin');
+        $professeur = new User();
+        $professeur->setLogin('professeur')
 
             ->setPassword($this->passwordHasher->hashPassword(
-                $user3,'secret'
+                $professeur,'secret'
             ))
             ->setRoles(['ROLE_PROFESSEUR'])
-            ->setNom('admin2')
-            ->setPrenom('toto');
+            ->setNom('Dupont')
+            ->setPrenom('Durand');
 
-        $user2 = new User();
-        $user2->setLogin('user')
+        $eleve = new User();
+        $eleve->setLogin('eleve')
 
             ->setPassword($this->passwordHasher->hashPassword(
-                $user2,'secret'
+                $eleve,'secret'
             ))
-            ->setRoles(['ROLE_USER'])
-            ->setNom('user')
+            ->setRoles(['ROLE_ELEVE'])
+            ->setNom('eleve')
             ->setPrenom('normal');
 
-        $manager->persist($user2);
-        $manager->persist($user);
-        $manager->persist($user3);
+
+        $manager->persist($admin);
+        $manager->persist($professeur);
+        $manager->persist($eleve);
+
 
 
         for ($i = 0; $i < 10; $i++) {
             $lecon = new Lecon();
             $participants = new ArrayCollection();
-            $participants->add($user);
+            $participants->add($eleve);
             $lecon->setNom($faker->sentence)
                 ->setDescription(join("\n\n**", $faker->paragraphs))
-                ->setProfesseur($user)
+                ->setProfesseur($professeur)
                 ->setParticipants($participants);
 
 
             $manager->persist($lecon);
+
         }
 
         $manager->flush();

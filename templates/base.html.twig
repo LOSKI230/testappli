@@ -42,6 +42,16 @@
             </ul>
 
         </div>
+
+        {% if is_granted('ROLE_ADMIN') %}
+            <button onclick="location.href='{{ path('app_gerer_professeur') }}'" class="btn btn-outline-light mx-1"  style="float: right">
+                Gérer professeur
+            </button>
+            <button onclick="location.href='{{ path('app_ajouter_professeur') }}'" class="btn btn-outline-light mx-1"  style="float: right">
+                Ajout professeur
+            </button>
+        {% endif %}
+
         <button onclick="location.href='{{ path('app_logout') }}'" class="btn btn-outline-danger"  style="float: right">
             Déconnexion
         </button>

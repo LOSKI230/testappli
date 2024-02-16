@@ -34,6 +34,7 @@ class LeconController extends AbstractController
         }
         return $this->render('lecon/index.html.twig', [
             'lecons' => $pageslecons,
+
         ]);
     }
 
@@ -133,7 +134,7 @@ class LeconController extends AbstractController
         return $this->redirectToRoute('app_lecon_index', [], Response::HTTP_SEE_OTHER);
 
     }
-    #[Route('/{id}/inscrit', name: 'app_lecon_show_mes_lecons', methods: ['GET', 'POST'])]
+    #[Route('/{id}/meslecons', name: 'app_lecon_show_mes_lecons', methods: ['GET', 'POST'])]
 
     public function showMesLecons(User $user): Response
     {

@@ -125,7 +125,18 @@ embellissement général du site
 ### qyestion14
 ```
 • embelissement general du site
+
 ```
+
+### question 15
+```
+• Ajout des boutons gerer professeur et ajout professeur au niveau de la navbar avec:
+- Ajout du controleur professeurController pour gerer les professeur
+- Ajout des twigs (afficher.html.twig) (ajoutprof.html.twig)
+- modification  des fixtures mise en place de utilisateurs admin,professeur et eleve
+
+```
+
 
 
 
