@@ -1,0 +1,19 @@
+/*!**************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[1].use[1]!./assets/styles/app.css ***!
+  \**************************************************************************************************************/
+body.image {
+    background-color: #343a40; /* Choisissez votre couleur de fond sombre ici */
+    color: #ffffff; /* Choisissez votre couleur de texte ici */
+    background-image: url(/build/images/nick-morrison-FHnnjk1Yj7Y-unsplash.8d1bcb5e.jpg); /* Ajoutez le chemin de votre image ici */
+    background-size: cover; /* Assurez-vous que l'image couvre tout le fond */
+    background-position: center; /* Centrez l'image */
+}
+.navbar{
+    background-color: #1a1d20;
+}
+
+div#row{
+    padding-top: 110px;
+}
+
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYXBwLmNzcyIsIm1hcHBpbmdzIjoiOzs7QUFBQTtJQUNJLHlCQUF5QixFQUFFLGdEQUFnRDtJQUMzRSxjQUFjLEVBQUUsMENBQTBDO0lBQzFELHlEQUFnRixFQUFFLHlDQUF5QztJQUMzSCxzQkFBc0IsRUFBRSxpREFBaUQ7SUFDekUsMkJBQTJCLEVBQUUsb0JBQW9CO0FBQ3JEO0FBQ0E7SUFDSSx5QkFBeUI7QUFDN0I7O0FBRUE7SUFDSSxrQkFBa0I7QUFDdEIsQyIsInNvdXJjZXMiOlsid2VicGFjazovLy8uL2Fzc2V0cy9zdHlsZXMvYXBwLmNzcyJdLCJzb3VyY2VzQ29udGVudCI6WyJib2R5LmltYWdlIHtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMzQzYTQwOyAvKiBDaG9pc2lzc2V6IHZvdHJlIGNvdWxldXIgZGUgZm9uZCBzb21icmUgaWNpICovXG4gICAgY29sb3I6ICNmZmZmZmY7IC8qIENob2lzaXNzZXogdm90cmUgY291bGV1ciBkZSB0ZXh0ZSBpY2kgKi9cbiAgICBiYWNrZ3JvdW5kLWltYWdlOiB1cmwoJy4uL3N0eWxlcy9pbWFnZXMvbmljay1tb3JyaXNvbi1GSG5uamsxWWo3WS11bnNwbGFzaC5qcGcnKTsgLyogQWpvdXRleiBsZSBjaGVtaW4gZGUgdm90cmUgaW1hZ2UgaWNpICovXG4gICAgYmFja2dyb3VuZC1zaXplOiBjb3ZlcjsgLyogQXNzdXJlei12b3VzIHF1ZSBsJ2ltYWdlIGNvdXZyZSB0b3V0IGxlIGZvbmQgKi9cbiAgICBiYWNrZ3JvdW5kLXBvc2l0aW9uOiBjZW50ZXI7IC8qIENlbnRyZXogbCdpbWFnZSAqL1xufVxuLm5hdmJhcntcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMWExZDIwO1xufVxuXG5kaXYjcm93e1xuICAgIHBhZGRpbmctdG9wOiAxMTBweDtcbn0iXSwibmFtZXMiOltdLCJzb3VyY2VSb290IjoiIn0=*/
